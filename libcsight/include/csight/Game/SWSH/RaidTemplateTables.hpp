@@ -2,7 +2,7 @@
 
 #include <csight/Enums/Ability.hpp>
 #include <csight/Game/SWSH/RaidSettings.hpp>
-#include <switch.h>
+#include <csight/Types.hpp>
 #include <vector>
 
 namespace csight::game::swsh {

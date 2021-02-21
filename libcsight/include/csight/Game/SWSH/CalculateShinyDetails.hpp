@@ -2,8 +2,8 @@
 
 #include <csight/Enums/ShinyType.hpp>
 #include <csight/Game/SWSH/RaidSettings.hpp>
+#include <csight/Types.hpp>
 #include <memory>
-#include <switch.h>
 #include <vector>
 
 namespace csight::game::swsh {

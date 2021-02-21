@@ -1,7 +1,8 @@
+#include <switch.h>
+
 #include <csight/core>
 #include <functional>
 #include <memory>
-#include <switch.h>
 #include <tesla.hpp>
 #include <ui/MainApplication.hpp>
 #include <ui/views/DenMenuLayout.hpp>

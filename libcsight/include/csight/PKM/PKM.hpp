@@ -5,10 +5,10 @@
 #include <csight/Enums/Types.hpp>
 #include <csight/Resources/Abilities.hpp>
 #include <csight/Resources/Types.hpp>
+#include <csight/Types.hpp>
 #include <csight/Utils.hpp>
 #include <future>
 #include <string>
-#include <switch.h>
 #include <vector>
 
 namespace csight::pkm {

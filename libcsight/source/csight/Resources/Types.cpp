@@ -1,6 +1,6 @@
 #include <csight/Enums/Types.hpp>
+#include <csight/Types.hpp>
 #include <string>
-#include <switch.h>
 #include <vector>
 
 namespace csight::resources {

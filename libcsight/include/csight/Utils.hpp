@@ -4,9 +4,9 @@
 #include <csight/Enums/Gender.hpp>
 #include <csight/Enums/ShinyType.hpp>
 #include <csight/Enums/Types.hpp>
+#include <csight/Types.hpp>
 #include <future>
 #include <string>
-#include <switch/types.h>
 #include <vector>
 
 namespace csight::utils {

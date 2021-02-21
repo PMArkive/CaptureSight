@@ -6,10 +6,10 @@
 #include <csight/Resources/Moves.hpp>
 #include <csight/Resources/Natures.hpp>
 #include <csight/Resources/Types.hpp>
+#include <csight/Types.hpp>
 #include <csight/Utils.hpp>
 #include <future>
 #include <string>
-#include <switch.h>
 #include <vector>
 
 namespace csight::pkm {

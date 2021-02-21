@@ -3,9 +3,9 @@
 #include <csight/Enums/Gender.hpp>
 #include <csight/Enums/Types.hpp>
 #include <csight/PKM/PKM.hpp>
+#include <csight/Types.hpp>
 #include <future>
 #include <string>
-#include <switch.h>
 #include <vector>
 
 namespace csight::pkm {

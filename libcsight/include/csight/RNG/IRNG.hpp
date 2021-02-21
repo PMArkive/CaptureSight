@@ -1,7 +1,7 @@
 #pragma once
 
 #include <cmath>
-#include <switch.h>
+#include <csight/Types.hpp>
 
 namespace csight::rng {
   class IRNG {

@@ -9,6 +9,7 @@
 #include <csight/PKM/PK8.hpp>
 #include <csight/RNG/RNG.hpp>
 #include <csight/TitleIds.hpp>
+#include <csight/Types.hpp>
 #include <flatbuffers/flatbuffers.h>
 #include <fstream>
 #include <memory>

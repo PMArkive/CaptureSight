@@ -1,7 +1,7 @@
 #pragma once
 
 #include <csight/RNG/IRNG.hpp>
-#include <switch.h>
+#include <csight/Types.hpp>
 
 // Thanks to https://github.com/Admiral-Fish/PokeFinder/blob/bdbaa4d651f62925f218e90c80a316fb782516e3/Core/RNG/MT.cpp for the
 // original code

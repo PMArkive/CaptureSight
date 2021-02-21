@@ -1,7 +1,7 @@
 #pragma once
 
+#include <csight/Types.hpp>
 #include <string>
-#include <switch.h>
 #include <utility>
 #include <vector>
 

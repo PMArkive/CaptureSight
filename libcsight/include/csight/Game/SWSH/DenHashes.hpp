@@ -1,6 +1,6 @@
 #pragma once
 
-#include <switch.h>
+#include <csight/Types.hpp>
 
 #define DEN_LIST_SIZE 276
 

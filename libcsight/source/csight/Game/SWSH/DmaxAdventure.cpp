@@ -3,12 +3,12 @@
 #include <csight/Game/SWSH/DmaxAdventure.hpp>
 #include <csight/RNG/MersenneTwister.hpp>
 #include <csight/RNG/RNG.hpp>
+#include <csight/Types.hpp>
 #include <csight/Utils.hpp>
 #include <iostream>
 #include <memory>
 #include <numeric>
 #include <stdint.h>
-#include <switch.h>
 #include <vector>
 
 namespace csight::game::swsh {

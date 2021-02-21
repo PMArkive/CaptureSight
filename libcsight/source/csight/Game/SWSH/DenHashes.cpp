@@ -1,5 +1,5 @@
 #include <csight/Game/SWSH/DenHashes.hpp>
-#include <switch.h>
+#include <csight/Types.hpp>
 
 namespace csight::game::swsh {
   u64 eventHash = 1721953670860364124u;

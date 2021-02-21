@@ -2,9 +2,9 @@
 #include <csight/Game/SWSH/CalculateShinyDetails.hpp>
 #include <csight/Game/SWSH/RaidSettings.hpp>
 #include <csight/RNG/RNG.hpp>
+#include <csight/Types.hpp>
 #include <csight/Utils.hpp>
 #include <memory>
-#include <switch.h>
 #include <vector>
 
 namespace csight::game::swsh {

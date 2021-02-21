@@ -11,6 +11,7 @@
 #include <iomanip>
 #include <ios>
 #include <sstream>
+#include <switch.h>
 
 // clang-format off
 std::vector<std::vector<float>> weaknessChart = {

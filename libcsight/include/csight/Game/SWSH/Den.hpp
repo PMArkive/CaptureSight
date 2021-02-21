@@ -3,9 +3,9 @@
 #include <csight/Enums/ShinyType.hpp>
 #include <csight/Game/SWSH/RaidTemplateTables.hpp>
 #include <csight/PKM/RaidPokemon.hpp>
+#include <csight/Types.hpp>
 #include <memory>
 #include <string>
-#include <switch.h>
 #include <vector>
 
 #ifndef MAX_RAID_ADVANCES

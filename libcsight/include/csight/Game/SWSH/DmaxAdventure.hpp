@@ -1,7 +1,7 @@
 #pragma once
 
+#include <csight/Types.hpp>
 #include <memory>
-#include <switch.h>
 #include <vector>
 
 namespace csight::game::swsh {

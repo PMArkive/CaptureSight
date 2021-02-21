@@ -3,8 +3,8 @@
 #include "../../../../Atmosphere-libs/libstratosphere/source/dmnt/dmntcht.h"
 #include <csight/PKM/PKM.hpp>
 #include <csight/TitleIds.hpp>
+#include <csight/Types.hpp>
 #include <csight/Utils.hpp>
-#include <switch.h>
 #include <vector>
 
 namespace csight::game {

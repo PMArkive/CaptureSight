@@ -3,7 +3,7 @@
 #include <csight/Enums/Ability.hpp>
 #include <csight/Game/SWSH/RaidTemplateTables.hpp>
 #include <csight/PKM/PKM.hpp>
-#include <switch.h>
+#include <csight/Types.hpp>
 #include <vector>
 
 namespace csight::pkm {
