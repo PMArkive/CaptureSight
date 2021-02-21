@@ -6,7 +6,7 @@
 #include <csight/Enums/Types.hpp>
 #include <future>
 #include <string>
-#include <switch.h>
+#include <switch/types.h>
 #include <vector>
 
 namespace csight::utils {

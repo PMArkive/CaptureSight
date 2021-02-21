@@ -4,7 +4,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string>
-#include <switch.h>
 #include <ui/views/MainApplication.hpp>
 #include <utils/I18N.hpp>
 #include <vector>
@@ -13,9 +12,7 @@ std::shared_ptr<csight::game::swsh::SWSHGame> g_gameReader;
 
 int main(int argc, char *argv[]) {
   // Init the app
-  setInitialize();
-  dmntchtInitialize();
-  dmntchtForceOpenCheatProcess();
+  initializeCsightCore();
 
   brls::Logger::setLogLevel(brls::LogLevel::DEBUG);
 
@@ -42,7 +39,6 @@ int main(int argc, char *argv[]) {
     ;
 
   // Exit
-  dmntchtExit();
-  setExit();
+  cleanupCsightCore();
   return EXIT_SUCCESS;
 }

@@ -3,7 +3,6 @@
 #include <functional>
 #include <memory>
 #include <string>
-#include <switch.h>
 #include <ui/views/MainApplication.hpp>
 #include <ui/views/PokemonSummaryView.hpp>
 #include <utils/I18N.hpp>

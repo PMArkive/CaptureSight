@@ -1,6 +1,7 @@
 #include <csight/core>
 #include <functional>
 #include <memory>
+#include <switch.h>
 #include <tesla.hpp>
 #include <ui/MainApplication.hpp>
 #include <ui/views/DenMenuLayout.hpp>
@@ -22,14 +23,11 @@ std::unique_ptr<tsl::Gui> MainApplication::loadInitialGui() {
 
 void MainApplication::initServices() {
   smInitialize();
-  setInitialize();
-  dmntchtInitialize();
-  dmntchtForceOpenCheatProcess();
+  initializeCsightCore();
 }
 
 void MainApplication::exitServices() {
-  dmntchtExit();
-  setExit();
+  cleanupCsightCore();
   smExit();
 }
 

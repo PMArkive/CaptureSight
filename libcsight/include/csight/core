@@ -12,6 +12,7 @@
 #include <csight/Game/SWSH/RaidSettings.hpp>
 #include <csight/Game/SWSH/RaidTemplateTables.hpp>
 #include <csight/Game/SWSH/SWSHGame.hpp>
+#include <csight/Language.hpp>
 #include <csight/PKM/PK8.hpp>
 #include <csight/PKM/PKM.hpp>
 #include <csight/PKM/RaidPokemon.hpp>
@@ -21,5 +22,7 @@
 #include <csight/Resources/Natures.hpp>
 #include <csight/Resources/Species.hpp>
 #include <csight/Resources/Types.hpp>
+#include <csight/Setup.hpp>
 #include <csight/TitleIds.hpp>
+#include <csight/Types.hpp>
 #include <csight/Utils.hpp>

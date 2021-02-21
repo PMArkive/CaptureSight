@@ -1,37 +1,29 @@
 #include <borealis.hpp>
+#include <csight/core>
 #include <fstream>
 #include <stdio.h>
 #include <string>
-#include <switch.h>
 #include <utils/I18N.hpp>
 #include <vector>
 
 nlohmann::json g_translations;
 
 std::string getTranslationCode() {
-  u64 languageCode = 0;
-  SetLanguage language = SetLanguage_ENUS;
-  setGetSystemLanguage(&languageCode);
-  setMakeLanguage(languageCode, &language);
+  auto language = getSystemLanguage();
   switch (language) {
-    case SetLanguage_ES:
-    case SetLanguage_ES419:
+    case Language::Spanish:
       return "es";
-    case SetLanguage_DE:
+    case Language::German:
       return "de";
-    case SetLanguage_FR:
-    case SetLanguage_FRCA:
+    case Language::French:
       return "fr";
-    case SetLanguage_ZHCN:
-    case SetLanguage_ZHHANS:
+    case Language::ChineseSimplified:
       return "chs";
-    case SetLanguage_ZHTW:
-    case SetLanguage_ZHHANT:
+    case Language::ChineseTraditional:
       return "cht";
-    case SetLanguage_IT:
+    case Language::Italian:
       return "it";
-    case SetLanguage_ENUS:
-    case SetLanguage_ENGB:
+    case Language::English:
     default:
       return "en";
   }
