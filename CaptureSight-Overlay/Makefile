@@ -34,7 +34,7 @@ ASFLAGS	:=	-g $(ARCH)
 LDFLAGS	=	-specs=$(DEVKITPRO)/libnx/switch.specs -g $(ARCH) -Wl,-Map,$(notdir $*.map)
 
 LIBS	:= -lcsight -lnx
-LIBDIRS	:= $(PORTLIBS) $(LIBNX) $(CURDIR)/../libcsight $(CURDIR)/../libtesla 
+LIBDIRS	:= $(PORTLIBS) $(LIBNX) $(CURDIR)/../libtesla 
 
 ifneq ($(BUILD),$(notdir $(CURDIR)))
 
@@ -72,9 +72,11 @@ export HFILES_BIN	:=	$(addsuffix .h,$(subst .,_,$(BINFILES)))
 
 export INCLUDE	:=	$(foreach dir,$(INCLUDES),-I$(CURDIR)/$(dir)) \
 			$(foreach dir,$(LIBDIRS),-I$(dir)/include) \
-			-I$(CURDIR)/$(BUILD)
+			-I$(CURDIR)/$(BUILD) \
+			-I$(CURDIR)/../libcsight/include
 
-export LIBPATHS	:=	$(foreach dir,$(LIBDIRS),-L$(dir)/lib)
+export LIBPATHS	:=	$(foreach dir,$(LIBDIRS),-L$(dir)/lib) \
+			-L$(CURDIR)/../libcsight/out/switch/lib
 
 ifeq ($(strip $(ICON)),)
 	icons := $(wildcard *.jpg)
