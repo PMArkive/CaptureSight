@@ -1,11 +1,14 @@
 #pragma once
 
-#include "../../../../Atmosphere-libs/libstratosphere/source/dmnt/dmntcht.h"
 #include <csight/PKM/PKM.hpp>
 #include <csight/TitleIds.hpp>
 #include <csight/Types.hpp>
 #include <csight/Utils.hpp>
 #include <vector>
+
+#ifdef __SWITCH__
+#include "../../../../Atmosphere-libs/libstratosphere/source/dmnt/dmntcht.h"
+#endif
 
 namespace csight::game {
   template <class PKMType>
@@ -13,13 +16,28 @@ namespace csight::game {
    public:
     GameReader() { m_isDebugServiceRunning = utils::checkIfServiceIsRunning("dmnt:cht"); }
 
-    Result attach() { return dmntchtGetCheatProcessMetadata(&m_metadata); }
+    Result attach() {
+#ifdef __SWITCH__
+      DmntCheatProcessMetadata metadata;
+      Result result = dmntchtGetCheatProcessMetadata(&metadata);
 
-    bool getIsPokemonRunning() { return (m_metadata.title_id == SWORD_TITLE_ID) || (m_metadata.title_id == SHIELD_TITLE_ID); }
+      if (R_SUCCEEDED(result)) {
+        m_heapBase = metadata.heap_extents.base;
+        m_titleId = metadata.title_id;
+      }
+
+      return result;
+#else
+      m_titleId = SWORD_TITLE_ID;
+      return 0;
+#endif
+    }
+
+    bool getIsPokemonRunning() { return (m_titleId == SWORD_TITLE_ID) || (m_titleId == SHIELD_TITLE_ID); }
 
     bool getIsServiceRunning() { return m_isDebugServiceRunning; }
 
-    u64 getTitleId() { return m_metadata.title_id; }
+    u64 getTitleId() { return m_titleId; }
 
     virtual std::vector<std::shared_ptr<PKMType>> readBoxes(u16 box) = 0;
     virtual std::vector<std::shared_ptr<PKMType>> readParty() = 0;
@@ -28,7 +46,12 @@ namespace csight::game {
 
    protected:
     Result readHeap(u64 offset, void *buffer, size_t size) {
-      return dmntchtReadCheatProcessMemory(m_metadata.heap_extents.base + offset, buffer, size);
+#ifdef __SWITCH__
+      return dmntchtReadCheatProcessMemory(m_heapBase + offset, buffer, size);
+#else
+      // A non-zero code is a fail code
+      return 1;
+#endif
     }
 
     std::shared_ptr<PKMType> readPKM(u64 offset, u32 pkmSize) {
@@ -60,6 +83,7 @@ namespace csight::game {
 
    private:
     bool m_isDebugServiceRunning = false;
-    DmntCheatProcessMetadata m_metadata;
+    u64 m_heapBase = 0;
+    u64 m_titleId = 0;
   };
 }

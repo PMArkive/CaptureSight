@@ -11,7 +11,10 @@
 #include <iomanip>
 #include <ios>
 #include <sstream>
+
+#ifdef __SWITCH__
 #include <switch.h>
+#endif
 
 // clang-format off
 std::vector<std::vector<float>> weaknessChart = {
@@ -41,6 +44,7 @@ std::vector<std::vector<float>> weaknessChart = {
 namespace csight::utils {
   // Thanks to https://github.com/WerWolv/EdiZon/blob/44a30ce9ad2571f46c3e420faec44d573a27ebbc/source/helpers/util.c#L31-L42
   bool checkIfServiceIsRunning(const char *serviceName) {
+#ifdef __SWITCH__
     Handle handle;
     SmServiceName service_name = smEncodeName(serviceName);
     bool running = R_FAILED(smRegisterService(&handle, service_name, false, 1));
@@ -51,6 +55,9 @@ namespace csight::utils {
       smUnregisterService(service_name);
 
     return running;
+#else
+    return true;
+#endif
   }
 
   std::string convertNumToHexString(u32 num) {

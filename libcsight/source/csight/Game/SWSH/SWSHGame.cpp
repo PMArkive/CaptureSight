@@ -13,10 +13,14 @@
 #include <flatbuffers/flatbuffers.h>
 #include <fstream>
 #include <memory>
+
+#ifdef __SWITCH__
 #include <switch.h>
+#endif
 
 namespace csight::game::swsh {
   u64 GetEventFlatbufferOffset() {
+#ifdef __SWITCH__
     u64 languageCode = 0;
     SetLanguage language = SetLanguage_ENUS;
     setGetSystemLanguage(&languageCode);
@@ -52,6 +56,9 @@ namespace csight::game::swsh {
       default:
         return 0x2f9eb320;
     }
+#else
+    return 0x2f9eb320;
+#endif
   }
 
   SWSHGame::SWSHGame() : GameReader<pkm::PK8>() {

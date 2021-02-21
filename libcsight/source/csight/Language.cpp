@@ -1,4 +1,6 @@
 #include <csight/Language.hpp>
+
+#ifdef __SWITCH__
 #include <switch.h>
 
 Language getSystemLanguage() {
@@ -39,3 +41,11 @@ Language getSystemLanguage() {
       return Language::English;
   }
 }
+
+#else
+Language getSystemLanguage() {
+  // Real language detection should be added later
+  // probably using a user config
+  return Language::English;
+}
+#endif
